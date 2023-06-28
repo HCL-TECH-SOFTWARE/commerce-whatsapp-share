@@ -1,0 +1,315 @@
+/**
+*==================================================
+
+Copyright [2023] [HCL America, Inc.]
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*==================================================
+**/
+ 
+ .popup {
+    position: fixed;
+    width: 430px;
+    height: 150px;
+    margin: auto;
+    background-color: #ffffff;
+  }
+  .popup_inner {
+    position: absolute;
+    right: 25%;
+    border-radius: 20px;
+    background: white;
+    line-height: 20px !important;
+  }
+  .hidden {
+    display: none;
+  }
+  a:-webkit-any-link {
+    text-decoration: none;
+  }
+  /**Start of barcode and voice search **/
+  /** voice search**/
+  
+  .speechToText-dialog {
+    .MuiDialog-scrollPaper {
+      align-items: flex-start;
+    }
+    .MuiBackdrop-root {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .MuiDialogContent-root {
+      padding: 40px;
+    }
+  }
+  #micWave {
+    .canvas-box {
+      position: absolute;
+      z-index: 1;
+      top: 2px;
+      left: 7px;
+    }
+    @media only screen and (max-width: 600px) {
+      canvas {
+        width: 260px !important;
+      }
+    }
+  }
+  .spinner-box {
+    position: absolute;
+    width: 40%;
+    left: 40px;
+    bottom: 0px;
+    padding: 0 30px;
+    background: #ffffff;
+    .MuiCircularProgress-root {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+  .header-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 45px;
+    margin-top: 10px;
+  }
+  .icon {
+    margin: 0 5px;
+    color: #5E6977;
+    display: flex;
+    align-items: center;
+    opacity: 0.78;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  .headerSearch {
+    .MuiInputBase-formControl:hover,
+    .Mui-focused {
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+  /**Barcode scanner**/
+  #interactive.viewport {
+    canvas,
+    video {
+      width: 100%;
+      max-width: 100%;
+    }
+    canvas.drawingBuffer {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .barcode-dialog {
+    .MuiDialogContent-root {
+      padding: 20px;
+    }
+  }
+  /**Image Search**/
+  // .imageToText-dialog,
+  // .file-dialog,
+  // .cam-dialog,
+  // .barcode-dialog {
+  //   .MuiDialog-scrollPaper {
+  //     align-items: flex-start;
+  //   }
+  //   .MuiDialogTitle-root,
+  //   .options {
+  //     border-bottom: 1px solid #ccc;
+  //   }
+  // }
+  // .imageToText-dialog {
+  //   .MuiBackdrop-root {
+  //     background-color: rgba(0, 0, 0, 0.8);
+  //   }
+  //   .icon {
+  //     padding: 10px;
+  //     display: flex;
+  //     align-items: center;
+  //     svg {
+  //       margin-right: 10px;
+  //     }
+  //   }
+  //   .MuiDialogContent-root {
+  //     padding: 0;
+  //   }
+  // }
+  // .file-dialog {
+  //   .MuiDialogContent-root {
+  //     padding: 20px 20px 40px;
+  //   }
+  // }
+  // .cam-dialog {
+  //   .MuiDialog-paper {
+  //     @media only screen and (max-width: 768px) {
+  //       margin: 10px;
+  //     }
+  //   }
+  //   .MuiDialogContent-root {
+  //     padding: 10px 20px;
+  //     @media only screen and (max-width: 768px) {
+  //       // padding:10px;
+  //     }
+  //     background-color: rgba(0, 0, 0, 0.81);
+  //     .cam-wrapper {
+  //       margin: auto;
+  //       video {
+  //         // height:360px;
+  //         @media only screen and (max-width: 768px) {
+  //           width: 98%;
+  //           // height:90%;
+  //         }
+  //       }
+  //     }
+  //     .camera-options {
+  //       text-align: center;
+  //       .click-btn,
+  //       .switch-camera,
+  //       .close-btn {
+  //         border: 1px solid #ccc;
+  //         font-size: 13px;
+  //         color: #fff;
+  //         width: 50px;
+  //         height: 50px;
+  //         padding: 4px;
+  //         display: inline-block;
+  //         line-height: 0;
+  //         margin: 0 20px;
+  //         border-radius: 50px;
+  //         background-color: transparent;
+  //         cursor: pointer;
+  //         &:hover {
+  //           color: #009874;
+  //           border-color: #009874;
+  //         }
+  //         @media only screen and (max-width: 768px) {
+  //           margin: 0 10px;
+  //         }
+  //       }
+  
+  //       .cam-icons {
+  //         vertical-align: middle;
+  //         display: inline-block;
+  //       }
+  //     }
+  //   }
+  // }
+  /**End of Barcode and voice search**/
+
+.react-responsive-modal-modal {
+  min-width: 336px;
+  border: 1px solid #888;
+}
+
+.image-search-close-button {
+  top: 25px !important;
+}
+
+@media only screen and (max-width: 320px) {
+  .react-responsive-modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.image-search-icon-options {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.image-seach-dialog-title {
+  margin: 0px;
+  padding: 10px 0px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.options {
+  padding: 5px 0;
+}
+
+.options:first-of-type {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.cam-wrapper {
+  margin-top: 40px;
+
+  video {
+    border: 1px solid #d3d3d3;
+
+    @media only screen and (max-width: 600px) {
+      width: 300px !important;
+      height: 300px !important;
+    }
+  }
+}
+
+.camera-options {
+  text-align: center;
+}
+
+.click-btn {
+  cursor: pointer;
+  border: 2px solid #000000;
+  border-radius: 50%;
+
+  &:hover {
+    svg {
+      opacity: 0.5;
+    }
+  }
+}
+
+.switch-camera {
+  float: right;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.whatsapp-icon{
+  display: flex;
+  align-items: center;
+  background: #25D366 !important;
+  border: none !important;
+  padding: 6px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.whatsapp-heading{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
+
+.whatsapp-error{
+  display: block;
+  font-size: 11px;
+  color:#ff604f;
+}
+
+.whatsapp-btn-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px !important;
+}
